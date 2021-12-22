@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2021/12/18 21:51:54 by einterdi         ###   ########.fr       */
+/*   Updated: 2021/12/22 16:47:23 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_H
 
 # include "../libft/libft.h"
+# include <mlx.h>
 # include <stdlib.h>
 # include <stdio.h> // strerror()
 # include <unistd.h>

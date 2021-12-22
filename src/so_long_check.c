@@ -6,13 +6,13 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 21:29:43 by einterdi          #+#    #+#             */
-/*   Updated: 2021/12/18 21:52:07 by einterdi         ###   ########.fr       */
+/*   Updated: 2021/12/20 19:03:52 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-void error_arg(char *str)
+void	error_arg(char *str)
 {
 	ft_putstr_fd("\033[31mError: \e[0m", 2);
 	ft_putstr_fd(str, 2);
@@ -21,15 +21,18 @@ void error_arg(char *str)
 	exit(EXIT_SUCCESS);
 }
 
-void check_argc(int ac, char **av)
+void	check_argc(int ac, char **av)
 {
 	if (ac != 2)
 		error_arg("Wrong number of arguments.");
-	if(ft_strncmp(av[1] + ft_strlen(av[1]) - 4, ".ber", 4))
+	if(ft_strlen(ft_strrchr(av[1], '/')) == 5)
+		error_arg("It is not a map.(2)");
+	printf("(1)");
+	if (ft_strncmp(av[1] + ft_strlen(av[1]) - 4, ".ber", 4))
 		error_arg("It is not a map.");
 }
 
-void error_fd(void)
+void	error_fd(void)
 {
 	ft_putstr_fd("\033[31mError:\e[0m ", 2);
 	ft_putstr_fd(strerror(errno), 2);

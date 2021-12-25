@@ -1,8 +1,8 @@
 NAME	=	so_long
 
-SRCS	=	src/so_long.c	src/so_long_utils.c	src/so_long_check.c
+SRCS	=	$(wildcard src/*.c)
 
-HEADER	=	include/so_long.h
+HEADER	=	include/
 
 OBJ		=	$(SRCS:%.c=%.o)
 
@@ -15,6 +15,8 @@ INCLUDE	=	-I
 FLAGS	=	-Wall -Wextra -Werror
 
 RM		= rm -rf
+
+MLX 	= -framework OpenGL -framework AppKit -lmlx
 #---------------------------------------------------------------------------------
 RED		=	\033[1;31m
 BLUE	=	\033[1;34m
@@ -37,8 +39,8 @@ $(NAME):	$(OBJ)
 			$(CC) $(FLAGS) $(OBJ) $(LIB) -o $(NAME)
 			@echo "$(TURQUOISE)\n< Complited $(NAME) >\n$(END)"
 
-%.o 	:	%.c $(HEADER)
-			$(CC) $(FLAGS) -c $< -o $@
+%.o 	:	%.c
+			$(CC) $(FLAGS)  -c $< -o $@ -I $(HEADER)
 
 clean:
 			@$(RM) $(OBJ)

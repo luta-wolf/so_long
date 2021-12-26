@@ -2,6 +2,8 @@ NAME	=	so_long
 
 #SRCS	=	$(wildcard src/*.c)
 SRCS	=	src/so_long.c	src/so_long_check.c	src/so_long_utils.c
+#SRCS	=	so_long.c	so_long_check.c	so_long_utils.c
+#DIR		=	src/
 
 OBJ		=	$(SRCS:%.c=%.o)
 
@@ -11,7 +13,7 @@ INCLUDE	=	include/
 
 HEADER	=	so_long.h
 
-СС		=	gcc
+CC		=	gcc
 
 FLAGS	=	-Wall -Wextra -Werror
 
@@ -35,7 +37,6 @@ all:		libft $(NAME)
 libft:
 			@$(MAKE) -C libft/
 
-
 $(NAME):	$(OBJ)
 			$(CC) $(FLAGS) $(OBJ) $(LIB) -o $(NAME)
 			@echo "$(TURQUOISE)\n< Complited $(NAME) >\n$(END)"
@@ -54,6 +55,6 @@ fclean:		clean
 			@echo "$(YELLOW)\n< All created files were deleted >\n$(END)"
 
 re:			fclean all
-			@echo "$(YELLOW)\n< Remake done >\n$(END)"
+			@echo "$(BLUE)\n< Remake done >\n$(END)"
 
 

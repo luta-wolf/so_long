@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: einterdi <einterdi@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 21:40:21 by einterdi          #+#    #+#             */
-/*   Updated: 2021/10/17 12:36:49 by einterdi         ###   ########.fr       */
+/*   Updated: 2021/12/26 22:30:52 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,14 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+//get_next_line.c
+char	*get_next_line(int fd);
+//get_next_line_utils.c
+char	*ft_gnl_strchr(const char *s, int c);
+size_t	ft_gnl_strlen(const char *str);
+char	*ft_gnl_strjoin(char *s1, char *s2);
+char	*ft_gnl_strdup(const char *s1);
 
 #endif
 //gcc test.c && ./a.out

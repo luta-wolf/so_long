@@ -1,7 +1,9 @@
 NAME	=	so_long
 
 #SRCS	=	$(wildcard src/*.c)
-SRCS	=	src/so_long.c	src/so_long_check.c	src/so_long_utils.c
+SRCS	=	src/so_long.c \
+			src/sl_parser_check.c \
+			src/sl_parser_error.c
 #SRCS	=	so_long.c	so_long_check.c	so_long_utils.c
 #DIR		=	src/
 
@@ -41,7 +43,7 @@ $(NAME):	$(OBJ)
 			$(CC) $(FLAGS) $(OBJ) $(LIB) -o $(NAME)
 			@echo "$(TURQUOISE)\n< Complited $(NAME) >\n$(END)"
 
-%.o 	:	%.c $(INCLUDE)$(HEADER)
+%.o :		%.c $(INCLUDE)$(HEADER)
 			$(CC) $(FLAGS)  -c $< -o $@ -I $(INCLUDE)
 
 clean:

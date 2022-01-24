@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 21:29:43 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/25 00:41:25 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/25 01:01:26 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,33 +35,12 @@ char	**get_line(char **av)
 		free(line);
 	}
 	arr = ft_split(new_line, '\n');
-	check_map_arg(new_line);
 	free(new_line);
 	close(fd);
 	return (arr);
 }
 
-void	check_map_arg(char *line)
-{
-	int		count_p;
-	int		count_e;
-	int		i;
-
-	count_p = 0;
-	count_e = 0;
-	i = -1;
-	while (line[++i])
-	{
-		if (line[i] == 'P')
-			count_p++;
-		else if (line[i] == 'E')
-			count_e++;
-	}
-	if (count_e > 1 || count_p > 1)
-		ft_error("Карта не валидна. P или E > 1");
-}
-
-void	check_map_line(char **arr)
+void	check_map_line_pe(char **arr)
 {
 	int		i;
 	int		j;
@@ -87,4 +66,30 @@ void	check_map_line(char **arr)
 		if (n != j)
 			ft_error("Карта не прямоугольной формы.");
 	}
+}
+
+void	check_map_arg(char **arr)
+{
+	int		count_p;
+	int		count_e;
+	int		i;
+	int		j;
+
+	count_p = 0;
+	count_e = 0;
+	i = -1;
+	while (arr[++i])
+	{
+		j = 0;
+		while (arr[i][j])
+		{
+			if (arr[i][j] == 'P')
+				count_p++;
+			else if (arr[i][j] == 'E')
+				count_e++;
+			j++;
+		}
+	}
+	if (count_e > 1 || count_p > 1)
+		ft_error("Количество игроков или выходов > 1");
 }

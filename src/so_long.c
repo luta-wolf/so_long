@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:23:01 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/24 22:56:03 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/25 01:01:36 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ void	parsing(int argc, char **argv)
 	char	**arr;
 	check_argc(argc, argv);
 	arr = get_line(argv);
-	check_map_line(arr);
+	check_map_line_pe(arr);
+	check_map_arg(arr);
 	free_arr(arr);
 
 }

@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/24 22:54:43 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/25 01:01:53 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 
 // sl_parser_check.c
 char	**get_line(char **av);
-void	check_map_line(char **arr);
-void	check_map_arg(char *line);
+void	check_map_line_pe(char **arr);
+void	check_map_arg(char **arr);
 
 // sl_parser_error.c
 void	ft_error(char *str);

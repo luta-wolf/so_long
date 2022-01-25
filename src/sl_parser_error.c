@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 21:06:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/24 21:50:29 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/25 13:00:15 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	error_fd(void)
 	exit(EXIT_FAILURE);
 }
 
-void	free_arr(char **arr)
+void	free_arr_map(t_map *map, char **arr)
 {
 	int i;
 
@@ -55,4 +55,5 @@ void	free_arr(char **arr)
 	while (arr[++i])
 		free(arr[i]);
 	free(arr);
+	free(map);
 }

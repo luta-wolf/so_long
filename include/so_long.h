@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/25 13:50:07 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/25 23:08:28 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,22 @@
 
 typedef struct s_map
 {
-	char 	**map;
+	char	**map;
 	int		e;
 	int		p;
 	int		length;
 	int		width;
 }				t_map;
 
-
 // sl_parser_check.c
 char	**get_line(char **av);
-t_map	*init_map(char **arr);
+void	check_map_whole(t_map *map, char **av);
 void	check_map_line(t_map *map);
 void	check_map_arg(t_map *map);
-void	check_map_border(t_map *map);
+void	check_map_border(t_map *map, int i, int j);
+
+// sl_parser_init.c
+t_map	*init_map(char **arr);
 
 // sl_parser_error.c
 void	ft_error(char *str);

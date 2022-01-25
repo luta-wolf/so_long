@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 21:29:43 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/25 14:38:07 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/25 23:11:24 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,24 +40,26 @@ char	**get_line(char **av)
 	return (arr);
 }
 
-t_map	*init_map(char **arr)
+void	check_map_whole(t_map *map, char **av)
 {
-	t_map	*map;
+	int		fd;
 	int		i;
+	char	*line;
 
-	map = malloc(sizeof(t_map));
-	if (!map)
-		return NULL;
+	fd = open(av[1], O_RDONLY);
+	if (fd == -1)
+		error_fd();
 	i = 0;
-	while (arr[i])
+	while (1)
+	{
+		line = get_next_line(fd);
 		i++;
-	map->map = arr;
-	map->length = ft_strlen(arr[0]);
-	map->width = i;
-	map->e = 0;
-	map->p = 0;
-	printf("Длина = %d, Ширина = %d\n", map->length, map->width);
-	return (map);
+		if (!line)
+			break ;
+	}
+	if (i != map->width + 1)
+		ft_error("В файле пустые строки.");
+	close(fd);
 }
 
 void	check_map_line(t_map *map)
@@ -106,11 +108,8 @@ void	check_map_arg(t_map *map)
 		ft_error("На карте должен быть один выход.");
 }
 
-void	check_map_border(t_map *map)
+void	check_map_border(t_map *map, int i, int j)
 {
-	int i;
-	int j;
-
 	i = -1;
 	while (map->map[0][++i])
 	{
@@ -136,5 +135,3 @@ void	check_map_border(t_map *map)
 		}
 	}
 }
-
-

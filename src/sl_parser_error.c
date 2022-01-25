@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 21:06:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/25 13:00:15 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/25 23:13:45 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	check_argc(int ac, char **av)
 {
 	if (ac != 2)
 		error_arg("Wrong number of arguments.");
-	if(ft_strrchr(av[1], '/') && ft_strlen(ft_strrchr(av[1], '/')) == 5)
+	if (ft_strrchr(av[1], '/') && ft_strlen(ft_strrchr(av[1], '/')) == 5)
 		error_arg("It is not a map.");
 	if (ft_strncmp(av[1] + ft_strlen(av[1]) - 4, ".ber", 4))
 		error_arg("Use files with 'ber' extension.");
@@ -49,7 +49,7 @@ void	error_fd(void)
 
 void	free_arr_map(t_map *map, char **arr)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (arr[++i])

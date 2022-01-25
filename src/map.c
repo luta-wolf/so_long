@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 13:37:13 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/02 01:18:47 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/25 23:05:58 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ typedef struct s_img
 	int		sprite_y;
 }			t_img;
 
-
-
 typedef struct s_all
 {
 	void	*mlx;
@@ -40,21 +38,21 @@ typedef struct s_all
 	t_img	img;
 }			t_all;
 
-int keys(int key, t_all *all)
+int	keys(int key, t_all *all)
 {
 	if (key == ESC)
 		exit(0);
 	return (0);
 }
 
-int end_game (t_all *all)
+int	end_game (t_all *all)
 {
 	printf("Thanks for your game\n");
 	exit(0);
 	return (0);
 }
 
-int main(void)
+int	main(void)
 {
 	t_all	all;
 
@@ -62,7 +60,6 @@ int main(void)
 	all.heigth_win = 5;
 	all.img.sprite_x = 64;
 	all.img.sprite_y = 64;
-
 	all.mlx = mlx_init();
 	all.win_mlx = mlx_new_window(all.mlx, all.width_win * SPRITE_X, all.heigth_win * SPRITE_Y, "so_long");
 	all.img.floor = mlx_xpm_file_to_image(all.mlx, FLOOR, &all.img.sprite_x, &all.img.sprite_y);

@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/25 13:04:25 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/25 13:50:07 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	**get_line(char **av);
 t_map	*init_map(char **arr);
 void	check_map_line(t_map *map);
 void	check_map_arg(t_map *map);
-// void	check_map_arg(char **arr);
+void	check_map_border(t_map *map);
 
 // sl_parser_error.c
 void	ft_error(char *str);

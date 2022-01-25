@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 21:29:43 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/25 13:07:23 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/25 14:38:07 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,27 +106,35 @@ void	check_map_arg(t_map *map)
 		ft_error("На карте должен быть один выход.");
 }
 
-// void	check_map_border(char **arr)
-// {
-// 	int i;
-// 	int j;
-// 	int len;
+void	check_map_border(t_map *map)
+{
+	int i;
+	int j;
 
-// 	i = -1;
-// 	len = ft_strlen(arr[0]);
-
-// 	while (arr[++i])
-// 	{
-// 		j = -1;
-// 		while (arr[i][++j])
-// 		{
-// 			if (arr[0][j] != 1 || )
-// 		}
-
-
-// 	}
-
-
-// }
+	i = -1;
+	while (map->map[0][++i])
+	{
+		if (map->map[0][i] != '1')
+			ft_error("Карта разомкнута сверху.");
+	}
+	i = -1;
+	while (map->map[map->width -1][++i])
+	{
+		if (map->map[map->width -1][i] != '1')
+			ft_error("Карта разомкнута снизу.");
+	}
+	i = 0;
+	while (map->map[++i] && i < map->width - 1)
+	{
+		j = -1;
+		while (map->map[i][++j])
+		{
+			if (map->map[i][0] != '1')
+				ft_error("Карта разомкнута слева.");
+			else if (map->map[i][map->length - 1] != '1')
+				ft_error("Карта разомкнута справа.");
+		}
+	}
+}
 
 

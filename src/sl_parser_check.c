@@ -5,20 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/18 21:29:43 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/25 23:11:24 by einterdi         ###   ########.fr       */
+/*   Created: 2022/01/26 08:32:19 by einterdi          #+#    #+#             */
+/*   Updated: 2022/01/26 10:51:14 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	**get_line(char **av)
+char	*get_line(char **av)
 {
+	// t_map	*map;
 	int		fd;
 	char	*new_line;
 	char	*line;
 	char	*tmp;
-	char	**arr;
 
 	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
@@ -34,10 +34,10 @@ char	**get_line(char **av)
 		free(tmp);
 		free(line);
 	}
-	arr = ft_split(new_line, '\n');
-	free(new_line);
+	// map->map = ft_split(new_line, '\n');
+	// free(new_line);
 	close(fd);
-	return (arr);
+	return (new_line);
 }
 
 void	check_map_whole(t_map *map, char **av)
@@ -56,6 +56,7 @@ void	check_map_whole(t_map *map, char **av)
 		i++;
 		if (!line)
 			break ;
+		free(line);
 	}
 	if (i != map->width + 1)
 		ft_error("В файле пустые строки.");

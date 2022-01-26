@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/25 23:08:28 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/26 10:52:27 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,24 @@
 # include <sys/errno.h>
 # include <string.h> // strerror()
 
+// sprites
+# define WALL "../sprites/wall.xpm"
+# define FLOOR "../sprites/floor.xpm"
+# define PLAYER
+# define EXIT
+# define COIN
+
+// keys
+# define ESC	53
+#define UP		13
+#define DOWN	1
+#define LEFT	0
+#define RIGHT	2
+
+// size sprite X Y
+# define SPRITE_X	64
+# define SPRITE_Y	64
+
 typedef struct s_map
 {
 	char	**map;
@@ -32,21 +50,21 @@ typedef struct s_map
 }				t_map;
 
 // sl_parser_check.c
-char	**get_line(char **av);
 void	check_map_whole(t_map *map, char **av);
 void	check_map_line(t_map *map);
 void	check_map_arg(t_map *map);
 void	check_map_border(t_map *map, int i, int j);
+char	*get_line(char **av);
 
 // sl_parser_init.c
-t_map	*init_map(char **arr);
+t_map	*init_map(char *line);
 
 // sl_parser_error.c
 void	ft_error(char *str);
 void	error_arg(char *str);
 void	check_argc(int ac, char **av);
 void	error_fd(void);
-void	free_arr_map(t_map *map, char **arr);
+void	free_arr_map(t_map *map);
 
 #endif
 

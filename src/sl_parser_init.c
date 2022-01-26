@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 22:37:40 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/26 10:32:10 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/26 11:01:26 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 t_map	*init_map(char *line)
 {
 	t_map	*map;
-	// char	**arr;
 	int		i;
 
 	map = malloc(sizeof(t_map));

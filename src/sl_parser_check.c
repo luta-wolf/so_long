@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 08:32:19 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/26 10:51:14 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/26 11:00:08 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*get_line(char **av)
 {
-	// t_map	*map;
 	int		fd;
 	char	*new_line;
 	char	*line;
@@ -34,8 +33,6 @@ char	*get_line(char **av)
 		free(tmp);
 		free(line);
 	}
-	// map->map = ft_split(new_line, '\n');
-	// free(new_line);
 	close(fd);
 	return (new_line);
 }

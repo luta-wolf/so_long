@@ -41,7 +41,7 @@ libft:
 			@$(MAKE) -C libft/
 
 $(NAME):	$(OBJ)
-			$(CC) $(FLAGS) $(OBJ) $(LIB) -o $(NAME)
+			$(CC) $(FLAGS) $(OBJ) $(LIB) $(MLX) -o $(NAME)
 			@echo "$(TURQUOISE)\n< Complited $(NAME) >\n$(END)"
 
 %.o :		%.c $(INCLUDE)$(HEADER)

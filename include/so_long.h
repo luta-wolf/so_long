@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/26 16:48:38 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/26 20:02:24 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@
 # include <string.h> // strerror()
 
 // sprites
-# define WALL	"../sprites/wall.xpm"
-# define FLOOR	"../sprites/floor.xpm"
-# define PLAYER	"../sprites/wizard.xpm"
-# define EXIT	"../sprites/door.xpm"
-# define COIN1	"../sprites/book1.xpm"
+# define WALL	"./sprites/wall.xpm"
+# define FLOOR	"./sprites/floor.xpm"
+# define PLAYER	"./sprites/wizard.xpm"
+# define EXIT	"./sprites/door.xpm"
+# define COIN1	"./sprites/book1.xpm"
 // # define COIN2	"../sprites/book2.xpm"
 // # define ENEMY1	"../sprites/fire1.xpm"
 // # define ENEMY2	"../sprites/fire2.xpm"
@@ -51,12 +51,11 @@ typedef struct s_vector
 
 typedef struct s_img
 {
-	void	*floor;
 	void	*wall;
+	void	*floor;
 	void	*player;
 	void	*exit;
-	void	*coin;
-
+	void	*coin1;
 }			t_img;
 
 typedef struct s_map
@@ -68,8 +67,8 @@ typedef struct s_map
 	int			width;
 	int			coin;
 	int			steps;
-	t_vector	koord_p;
-	t_img	img;
+	t_vector	koord;
+	t_img		img;
 }				t_map;
 
 // sl_parser_check.c
@@ -81,6 +80,9 @@ char	*get_line(char **av);
 
 // sl_parser_init.c
 t_map	*init_map(char *line);
+void	init_sprites(t_map *map);
+void	drow_image(t_map *map);
+void	drow_map(t_map *map);
 
 // sl_parser_error.c
 void	ft_error(char *str);

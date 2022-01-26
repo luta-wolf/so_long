@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 08:32:19 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/26 16:40:01 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/26 21:17:44 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,11 @@ void	check_map_arg(t_map *map)
 		while (map->map[i][j])
 		{
 			if (map->map[i][j] == 'P')
+			{
+				map->koord.x = j;
+				map->koord.y = i;
 				player++;
+			}
 			else if (map->map[i][j] == 'C')
 				map->coin++;
 			j++;

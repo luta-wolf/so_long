@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/26 10:52:27 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/26 13:52:58 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,21 @@
 # include <string.h> // strerror()
 
 // sprites
-# define WALL "../sprites/wall.xpm"
-# define FLOOR "../sprites/floor.xpm"
-# define PLAYER
-# define EXIT
-# define COIN
+# define WALL	"../sprites/wall.xpm"
+# define FLOOR	"../sprites/floor.xpm"
+# define PLAYER	"../sprites/wizard.xpm"
+# define EXIT	"../sprites/door.xpm"
+# define COIN1	"../sprites/book1.xpm
+// # define COIN2	"../sprites/book2.xpm"
+// # define ENEMY1	"../sprites/fire1.xpm"
+// # define ENEMY2	"../sprites/fire2.xpm"
 
 // keys
 # define ESC	53
-#define UP		13
-#define DOWN	1
-#define LEFT	0
-#define RIGHT	2
+# define UP		13
+# define DOWN	1
+# define LEFT	0
+# define RIGHT	2
 
 // size sprite X Y
 # define SPRITE_X	64

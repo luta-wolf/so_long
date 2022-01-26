@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 08:32:19 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/26 11:00:08 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/26 16:40:01 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,11 @@ void	check_map_line(t_map *map)
 
 void	check_map_arg(t_map *map)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
+	int	player;
 
+	player = 0;
 	i = -1;
 	while (map->map[++i])
 	{
@@ -94,16 +96,14 @@ void	check_map_arg(t_map *map)
 		while (map->map[i][j])
 		{
 			if (map->map[i][j] == 'P')
-				map->p++;
-			else if (map->map[i][j] == 'E')
-				map->e++;
+				player++;
+			else if (map->map[i][j] == 'C')
+				map->coin++;
 			j++;
 		}
 	}
-	if (map->p != 1)
+	if (player != 1)
 		ft_error("На карте должен быть один игрок.");
-	if (map->e != 1)
-		ft_error("На карте должен быть один выход.");
 }
 
 void	check_map_border(t_map *map, int i, int j)

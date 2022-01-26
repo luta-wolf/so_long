@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/26 13:52:58 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/26 16:48:38 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # define FLOOR	"../sprites/floor.xpm"
 # define PLAYER	"../sprites/wizard.xpm"
 # define EXIT	"../sprites/door.xpm"
-# define COIN1	"../sprites/book1.xpm
+# define COIN1	"../sprites/book1.xpm"
 // # define COIN2	"../sprites/book2.xpm"
 // # define ENEMY1	"../sprites/fire1.xpm"
 // # define ENEMY2	"../sprites/fire2.xpm"
@@ -43,13 +43,33 @@
 # define SPRITE_X	64
 # define SPRITE_Y	64
 
+typedef struct s_vector
+{
+	int x;
+	int y;
+}	t_vector;
+
+typedef struct s_img
+{
+	void	*floor;
+	void	*wall;
+	void	*player;
+	void	*exit;
+	void	*coin;
+
+}			t_img;
+
 typedef struct s_map
 {
-	char	**map;
-	int		e;
-	int		p;
-	int		length;
-	int		width;
+	void		*mlx;
+	void		*win;
+	char		**map;
+	int			length;
+	int			width;
+	int			coin;
+	int			steps;
+	t_vector	koord_p;
+	t_img	img;
 }				t_map;
 
 // sl_parser_check.c

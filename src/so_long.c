@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:23:01 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/26 11:05:09 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/26 16:41:51 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 	t_map	*map;
 
 	map = parsing(argc, argv);
-	game();
+	// game();
 	free_arr_map(map);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:23:01 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/26 21:18:14 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/27 10:47:00 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 void game(t_map *map)
 {
 	// drow_image(map);
+	// mlx_key_hook(map->wingit , keys, &map);
 	drow_map(map);
+	mlx_loop(map->mlx);
+	// mlx_loop_hook(map->mlx, drow_map, map);;
 }
 
 t_map	*parsing(int argc, char **argv)

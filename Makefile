@@ -4,7 +4,8 @@ NAME	=	so_long
 SRCS	=	src/so_long.c \
 			src/sl_parser_check.c \
 			src/sl_parser_init.c \
-			src/sl_parser_error.c
+			src/sl_parser_error.c \
+			src/sl_move_player.c
 #SRCS	=	so_long.c	so_long_check.c	so_long_utils.c
 #DIR		=	src/
 

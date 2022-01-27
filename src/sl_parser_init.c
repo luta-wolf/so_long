@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 22:37:40 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/26 21:15:24 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/27 10:34:05 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,4 @@ void	drow_map(t_map *map)
 				mlx_put_image_to_window(map->mlx, map->win, map->img.coin1, j * 64, i * 64);
 		}
 	}
-	mlx_loop(map->mlx);
 }
-
-
-// void	move_player_up(t_map *map, int key)
-// {
-// 	if (key == UP)
-
-// }

@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/26 20:02:24 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/27 10:42:38 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,10 @@ void	error_arg(char *str);
 void	check_argc(int ac, char **av);
 void	error_fd(void);
 void	free_arr_map(t_map *map);
+
+// sl_move_player.c
+void	keys(t_map *map, int key);
+int		move_player_up(t_map *map);
 
 #endif
 

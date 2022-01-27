@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:23:01 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/27 10:47:00 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/27 19:38:07 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void game(t_map *map)
 {
-	// drow_image(map);
-	// mlx_key_hook(map->wingit , keys, &map);
-	drow_map(map);
+	mlx_key_hook(map->win, keys, map);
+	// mlx_hook(map->win, 2, 0, keys, map);
+	mlx_hook(map->win, 17, 0, end_game, map);
+	mlx_loop_hook(map->mlx, drow_map, map);
 	mlx_loop(map->mlx);
-	// mlx_loop_hook(map->mlx, drow_map, map);;
 }
 
 t_map	*parsing(int argc, char **argv)
@@ -59,3 +59,12 @@ int	main(int argc, char **argv)
 И коллекции
 
 */
+
+	// int i = -1;
+	// while (map->map[++i])
+	// {
+	// 	int j = -1;
+	// 	while (map->map[i][++j])
+	// 		printf("%c", map->map[i][j]);
+	// 	printf("\n");
+	// }

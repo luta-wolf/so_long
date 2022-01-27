@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 22:37:40 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/27 10:34:05 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/27 19:41:16 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,21 +45,15 @@ void	init_sprites(t_map *map)
 	map->img.player = mlx_xpm_file_to_image(map->mlx, PLAYER, &x, &y);
 	map->img.exit = mlx_xpm_file_to_image(map->mlx, EXIT, &x, &y);
 	map->img.coin1 = mlx_xpm_file_to_image(map->mlx, COIN1, &x, &y);
+	if (!map->img.wall || !map->img.floor || !map->img.player ||
+		!map->img.exit || !map->img.coin1)
+	{
+		printf("Не удалось открыть файл с картинкой.\n");
+		exit(1);
+	}
 }
 
-void	drow_image(t_map *map)
-{
-
-	mlx_put_image_to_window(map->mlx, map->win, map->img.wall, 0, 0);
-	mlx_put_image_to_window(map->mlx, map->win, map->img.floor, 1 * 64, 0);
-	mlx_put_image_to_window(map->mlx, map->win, map->img.player, 2 * 64, 0);
-	mlx_put_image_to_window(map->mlx, map->win, map->img.exit, 3 * 64, 0);
-	mlx_put_image_to_window(map->mlx, map->win, map->img.coin1, 4 * 64, 0);
-	mlx_loop(map->mlx);
-}
-
-
-void	drow_map(t_map *map)
+int	drow_map(t_map *map)
 {
 	int i;
 	int j;
@@ -82,4 +76,12 @@ void	drow_map(t_map *map)
 				mlx_put_image_to_window(map->mlx, map->win, map->img.coin1, j * 64, i * 64);
 		}
 	}
+	return 0;
 }
+
+// void	animatino(t_map *map)
+// {
+
+// }
+
+	// mlx_clear_window(map->map, map->win);

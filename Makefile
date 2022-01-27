@@ -1,11 +1,13 @@
 NAME	=	so_long
 
 #SRCS	=	$(wildcard src/*.c)
-SRCS	=	src/so_long.c \
-			src/sl_parser_check.c \
-			src/sl_parser_init.c \
-			src/sl_parser_error.c \
-			src/sl_move_player.c
+SRCS	=	src/so_long.c			\
+			src/sl_parser_check.c	\
+			src/sl_parser_init.c	\
+			src/sl_parser_error.c	\
+			src/sl_move_player.c	\
+			src/sl_move_left_right.c \
+			src/sl_move_up_down.c	\
 #SRCS	=	so_long.c	so_long_check.c	so_long_utils.c
 #DIR		=	src/
 

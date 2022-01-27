@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/27 10:42:38 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/27 19:30:00 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@
 # include <string.h> // strerror()
 
 // sprites
-# define WALL	"./sprites/wall.xpm"
-# define FLOOR	"./sprites/floor.xpm"
-# define PLAYER	"./sprites/wizard.xpm"
-# define EXIT	"./sprites/door.xpm"
-# define COIN1	"./sprites/book1.xpm"
+# define WALL	"sprites/wall.xpm"
+# define FLOOR	"sprites/floor.xpm"
+# define PLAYER	"sprites/wizard.xpm"
+# define EXIT	"sprites/door.xpm"
+# define COIN1	"sprites/book1.xpm"
 // # define COIN2	"../sprites/book2.xpm"
 // # define ENEMY1	"../sprites/fire1.xpm"
 // # define ENEMY2	"../sprites/fire2.xpm"
@@ -67,7 +67,7 @@ typedef struct s_map
 	int			width;
 	int			coin;
 	int			steps;
-	t_vector	koord;
+	t_vector	play_coord;
 	t_img		img;
 }				t_map;
 
@@ -82,7 +82,7 @@ char	*get_line(char **av);
 t_map	*init_map(char *line);
 void	init_sprites(t_map *map);
 void	drow_image(t_map *map);
-void	drow_map(t_map *map);
+int		drow_map(t_map *map);
 
 // sl_parser_error.c
 void	ft_error(char *str);
@@ -92,8 +92,21 @@ void	error_fd(void);
 void	free_arr_map(t_map *map);
 
 // sl_move_player.c
-void	keys(t_map *map, int key);
-int		move_player_up(t_map *map);
+int		keys(int key, t_map *map);
+int		end_game(void);
+void	steps(t_map *map);
+
+// sl_move_up_down.c
+void	move_player_up(t_map *map);
+void	move_player_down(t_map *map);
+void	move_up(t_map *map);
+void	move_down(t_map *map);
+
+// sl_move_left_right.c
+void	move_player_left(t_map *map);
+void	move_player_right(t_map *map);
+void	move_left(t_map *map);
+void	move_right(t_map *map);
 
 #endif
 

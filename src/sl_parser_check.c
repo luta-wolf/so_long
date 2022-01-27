@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 08:32:19 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/26 21:33:37 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/27 17:05:21 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,10 @@ void	check_map_arg(t_map *map)
 		{
 			if (map->map[i][j] == 'P')
 			{
-				map->koord.x = j;
-				map->koord.y = i;
+				map->play_coord.x = j;
+				map->play_coord.y = i;
 				// printf("x = %d, y = %d\n", j, i);
+				// printf("play_x = %d, play_y = %d\n", map->play_coord.x, map->play_coord.y);
 				player++;
 			}
 			else if (map->map[i][j] == 'C')

@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/27 21:25:18 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:56:19 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,8 @@
 # define EXIT	"sprites/door.xpm"
 # define COIN1	"sprites/book1.xpm"
 # define COIN2	"sprites/book2.xpm"
-// # define COIN2	"../sprites/book2.xpm"
-// # define ENEMY1	"../sprites/fire1.xpm"
-// # define ENEMY2	"../sprites/fire2.xpm"
+# define ENEMY1	"sprites/fire1.xpm"
+# define ENEMY2	"sprites/fire2.xpm"
 
 // keys
 # define ESC	53
@@ -59,6 +58,9 @@ typedef struct s_img
 	void	*coin;
 	void	*coin1;
 	void	*coin2;
+	void	*fire;
+	void	*fire1;
+	void	*fire2;
 }			t_img;
 
 typedef struct s_map

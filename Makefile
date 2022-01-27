@@ -10,8 +10,17 @@ SRCS	=	src/so_long.c			\
 			src/sl_move_up_down.c	\
 #SRCS	=	so_long.c	so_long_check.c	so_long_utils.c
 #DIR		=	src/
+SRCS_B	=	src_bonus/so_long_bonus.c			\
+			src_bonus/sl_parser_check_bonus.c	\
+			src_bonus/sl_parser_init_bonus.c	\
+			src_bonus/sl_parser_error_bonus.c	\
+			src_bonus/sl_move_player_bonus.c	\
+			src_bonus/sl_move_left_right_bonus.c \
+			src_bonus/sl_move_up_down_bonus.c	\
 
 OBJ		=	$(SRCS:%.c=%.o)
+
+OBJ_B		=	$(SRCS_B:%.c=%.o)
 
 LIB		=	libft/libft.a
 
@@ -50,8 +59,12 @@ $(NAME):	$(OBJ)
 %.o :		%.c $(INCLUDE)$(HEADER)
 			$(CC) $(FLAGS)  -c $< -o $@ -I $(INCLUDE)
 
+bonus:		libft $(OBJ_B)
+			$(CC) $(FLAGS) $(OBJ_B) $(LIB) $(MLX) -o $(NAME)
+			@echo "$(TURQUOISE)\n< Complited $(NAME) >\n$(END)"
+
 clean:
-			@$(RM) $(OBJ)
+			@$(RM) $(OBJ) $(OBJ_B)
 			@$(MAKE) -C libft/ clean
 			@echo "$(YELLOW)\n< Cleaning succeed >\n$(END)"
 

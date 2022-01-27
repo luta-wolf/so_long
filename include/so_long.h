@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/27 19:30:00 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:17:02 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define PLAYER	"sprites/wizard.xpm"
 # define EXIT	"sprites/door.xpm"
 # define COIN1	"sprites/book1.xpm"
+# define COIN2	"sprites/book2.xpm"
 // # define COIN2	"../sprites/book2.xpm"
 // # define ENEMY1	"../sprites/fire1.xpm"
 // # define ENEMY2	"../sprites/fire2.xpm"
@@ -45,8 +46,8 @@
 
 typedef struct s_vector
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 }	t_vector;
 
 typedef struct s_img
@@ -55,7 +56,9 @@ typedef struct s_img
 	void	*floor;
 	void	*player;
 	void	*exit;
+	void	*coin;
 	void	*coin1;
+	void	*coin2;
 }			t_img;
 
 typedef struct s_map
@@ -82,7 +85,6 @@ char	*get_line(char **av);
 t_map	*init_map(char *line);
 void	init_sprites(t_map *map);
 void	drow_image(t_map *map);
-int		drow_map(t_map *map);
 
 // sl_parser_error.c
 void	ft_error(char *str);
@@ -92,6 +94,7 @@ void	error_fd(void);
 void	free_arr_map(t_map *map);
 
 // sl_move_player.c
+int		drow_map(t_map *map);
 int		keys(int key, t_map *map);
 int		end_game(void);
 void	steps(t_map *map);

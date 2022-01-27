@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 18:02:38 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/27 18:19:47 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:09:58 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	move_up(t_map *map)
 {
-		map->map[map->play_coord.y - 1][map->play_coord.x] = 'P';
-		map->map[map->play_coord.y][map->play_coord.x] = '0';
-		map->play_coord.y--;
-		steps(map);
+	map->map[map->play_coord.y - 1][map->play_coord.x] = 'P';
+	map->map[map->play_coord.y][map->play_coord.x] = '0';
+	map->play_coord.y--;
+	steps(map);
 }
 
 void	move_down(t_map *map)
 {
-		map->map[map->play_coord.y + 1][map->play_coord.x] = 'P';
-		map->map[map->play_coord.y][map->play_coord.x] = '0';
-		map->play_coord.y++;
-		steps(map);
+	map->map[map->play_coord.y + 1][map->play_coord.x] = 'P';
+	map->map[map->play_coord.y][map->play_coord.x] = '0';
+	map->play_coord.y++;
+	steps(map);
 }
 
 void	move_player_up(t_map *map)

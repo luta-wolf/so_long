@@ -53,7 +53,7 @@ make bonus
 Библиотека MiniLibX:
 -------------------
 
-На английском [MiniLibX library](https://harm-smits.github.io/42docs/libs/minilibx "https://harm-smits.github.io/42docs/libs/minilibx")
+На английском [английском](https://harm-smits.github.io/42docs/libs/minilibx "https://harm-smits.github.io/42docs/libs/minilibx")
 
 
 На русском

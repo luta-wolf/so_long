@@ -24,13 +24,6 @@ So_long
 1P0000000C00C000000X00000CC10000E1
 1111111111111111111111111111111111
 ```
-Управление
-----------
-- `W` или `стрелка вверх` (для бонусной части) - идти вверх
-- `S` или `стрелка вниз` (для бонусной части) - идти вниз
-- `A` или `стрелка влево` (для бонусной части) - идти влево
-- `D` или `стрелка вправо` (для бонусной части) - идти вправо
-
 Компиляция
 ----------
 ```
@@ -49,12 +42,18 @@ make bonus
 ```
 ./so_long maps/bonus.ber
 ```
+Управление
+----------
+- `W` или `стрелка вверх` (для бонусной части) - идти вверх
+- `S` или `стрелка вниз` (для бонусной части) - идти вниз
+- `A` или `стрелка влево` (для бонусной части) - идти влево
+- `D` или `стрелка вправо` (для бонусной части) - идти вправо
 
 Библиотека MiniLibX:
 -------------------
 
-На английском [английском](https://harm-smits.github.io/42docs/libs/minilibx "https://harm-smits.github.io/42docs/libs/minilibx")
+На английском [английском](https://harm-smits.github.io/42docs/libs/minilibx "https://harm-smits.github.io/42docs/libs/minilibx").
 
 
-На русском [русском](https://github.com/evgenkarlson/ALL_SCHOOL_42/tree/master/00_Projects__(%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5_%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5)/03_Graphic/minilibx_(library_for_solving_projects_of_this_branch) "https://github.com/evgenkarlson/ALL_SCHOOL_42/tree/master/00_Projects__(%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5_%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5)/03_Graphic/minilibx_(library_for_solving_projects_of_this_branch)")
+На русском [русском](https://github.com/evgenkarlson/ALL_SCHOOL_42/tree/master/00_Projects__(%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5_%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5)/03_Graphic/minilibx_(library_for_solving_projects_of_this_branch) "https://github.com/evgenkarlson/ALL_SCHOOL_42/tree/master/00_Projects__(%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5_%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5)/03_Graphic/minilibx_(library_for_solving_projects_of_this_branch)").
 

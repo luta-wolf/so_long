@@ -42,6 +42,7 @@ make bonus
 ```
 ./so_long maps/bonus.ber
 ```
+![image](https://user-images.githubusercontent.com/58044383/151606573-823df19b-2971-4f8e-bce5-e8858715afaa.png)
 Управление
 ----------
 - `W` или `стрелка вверх` (для бонусной части) - идти вверх

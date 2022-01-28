@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 18:05:31 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/28 14:23:01 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/28 17:25:10 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	move_right(t_map *map)
 
 void	move_player_left(t_map *map)
 {
+	map->img.player = map->img.player2;
 	if (map->map[map->play_coord.y][map->play_coord.x - 1] == '0')
 		move_left(map);
 	else if (map->map[map->play_coord.y][map->play_coord.x - 1] == 'C')
@@ -52,6 +53,7 @@ void	move_player_left(t_map *map)
 
 void	move_player_right(t_map *map)
 {
+	map->img.player = map->img.player1;
 	if (map->map[map->play_coord.y][map->play_coord.x + 1] == '0')
 		move_right(map);
 	else if (map->map[map->play_coord.y][map->play_coord.x + 1] == 'C')

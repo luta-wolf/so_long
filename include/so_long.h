@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/28 16:29:59 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/28 17:22:21 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@
 # include <string.h> // strerror()
 
 // sprites
-# define WALL	"sprites/wall.xpm"
-# define FLOOR	"sprites/floor.xpm"
-# define PLAYER	"sprites/wizard.xpm"
-# define EXIT	"sprites/door.xpm"
-# define COIN1	"sprites/book1.xpm"
-# define COIN2	"sprites/book2.xpm"
-# define ENEMY1	"sprites/fire1.xpm"
-# define ENEMY2	"sprites/fire2.xpm"
+# define WALL		"sprites/wall.xpm"
+# define FLOOR		"sprites/floor.xpm"
+# define PLAYER1	"sprites/wizard1.xpm"
+# define PLAYER2	"sprites/wizard2.xpm"
+# define EXIT		"sprites/door.xpm"
+# define COIN1		"sprites/book1.xpm"
+# define COIN2		"sprites/book2.xpm"
+# define ENEMY1		"sprites/fire1.xpm"
+# define ENEMY2		"sprites/fire2.xpm"
 
 // keys
 # define ESC	53
@@ -54,6 +55,8 @@ typedef struct s_img
 	void	*wall;
 	void	*floor;
 	void	*player;
+	void	*player1;
+	void	*player2;
 	void	*exit;
 	void	*coin;
 	void	*coin1;

@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:35:30 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/28 17:04:15 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:23:53 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int	drow_map(t_map *map)
 	}
 	mlx_string_put(map->mlx, map->win, 10, 10, 0xff00, "Steps:");
 	mlx_string_put(map->mlx, map->win, 75, 10, 0xff00, count_step);
+	free(count_step);
 	return (0);
 }
 

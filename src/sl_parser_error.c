@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 21:06:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/26 13:58:37 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:26:32 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	check_argc(int ac, char **av)
 		error_arg("It is not a map.");
 	if (ft_strncmp(av[1] + ft_strlen(av[1]) - 4, ".ber", 4))
 		error_arg("Use files with 'ber' extension.");
+	if (open(av[1], O_DIRECTORY) != -1)
+		error_fd();
 }
 
 void	error_fd(void)

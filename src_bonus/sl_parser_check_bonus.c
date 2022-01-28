@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 08:32:19 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/28 17:03:09 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/28 17:36:43 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	check_map_line(t_map *map)
 	}
 }
 
-void	check_map_arg(t_map *map, int i)
+void	check_map_arg2(t_map *map, int i)
 {
 	int	j;
 	int	player;

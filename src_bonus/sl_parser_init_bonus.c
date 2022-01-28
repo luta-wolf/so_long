@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 22:37:40 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/28 17:21:35 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/28 17:36:14 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ void	init_sprites(t_map *map)
 	map->img.coin2 = mlx_xpm_file_to_image(map->mlx, COIN2, &x, &y);
 	map->img.fire1 = mlx_xpm_file_to_image(map->mlx, ENEMY1, &x, &y);
 	map->img.fire2 = mlx_xpm_file_to_image(map->mlx, ENEMY2, &x, &y);
-	if (!map->img.wall || !map->img.floor || !map->img.player
-		|| !map->img.exit || !map->img.coin1 || !map->img.coin2
-		|| !map->img.fire1 || !map->img.fire2)
+	if (!map->img.wall || !map->img.floor || !map->img.player1
+		|| !map->img.player1 || !map->img.exit || !map->img.coin1
+		|| !map->img.coin2 || !map->img.fire1 || !map->img.fire2)
 	{
 		printf("Не удалось открыть файл с картинкой.\n");
 		exit(1);

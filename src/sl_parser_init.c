@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 22:37:40 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/27 21:17:22 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/28 17:40:07 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	init_sprites(t_map *map)
 	y = 64;
 	map->img.wall = mlx_xpm_file_to_image(map->mlx, WALL, &x, &y);
 	map->img.floor = mlx_xpm_file_to_image(map->mlx, FLOOR, &x, &y);
-	map->img.player = mlx_xpm_file_to_image(map->mlx, PLAYER, &x, &y);
+	map->img.player = mlx_xpm_file_to_image(map->mlx, PLAYER1, &x, &y);
 	map->img.exit = mlx_xpm_file_to_image(map->mlx, EXIT, &x, &y);
 	map->img.coin1 = mlx_xpm_file_to_image(map->mlx, COIN1, &x, &y);
 	map->img.coin2 = mlx_xpm_file_to_image(map->mlx, COIN2, &x, &y);

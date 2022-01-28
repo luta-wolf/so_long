@@ -1,33 +1,42 @@
-Изучаем библиотеку mlx.h
+So_long
+=======
+Этот проект представляет собой очень маленькую 2D-игру.
+Его цель — заставить вас работать с текстурами, спрайтами и некоторыми другими базовыми элементами игрового процесса.
 
-0) MLX на русском
-https://github.com/evgenkarlson/ALL_SCHOOL_42/tree/master/00_Projects__(%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5_%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5)/03_Graphic/minilibx_(library_for_solving_projects_of_this_branch)
+Карта
+-----
+(обязательно с расширением .ber) состоит из:
+1 - стена (карта должна быть окружена стенами)
+0 - пол
+P - игрок (должен быть один)
+E - выход (должен быть как минимум один. можно выйти как только на карте собраны все предметы)
+C - собираемые предметы
+X - враги (при соприкосновение с ними игра заканчивается)
 
-1) Introduction to MinilibX
-https://cdn.intra.42.fr/video/video/1021/low_d__project__MinilibX_-_Introduction.mp4
-2) MinilibX : Events
-https://cdn.intra.42.fr/video/video/1022/low_d__project__MinilibX_-_Les_e%CC%81ve%CC%81nements.mp4
-3) FDF на русском
-https://www.youtube.com/watch?v=10P59aOgi68&ab_channel=%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9%D0%A1%D0%A4%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D0%B5%D0%B9
+Компиляция
+----------
+```
+make
+```
+для бонусной части
+```
+make bonus
+```
+Запуск
+------
+```
+./so_long maps/2.ber
+```
+карта для бонусной части
+```
+./so_long maps/bonus.ber
+```
 
-Дока на английском
+Библиотека <mlx.h>:
+-------------------
+
+MLX на английском
 https://harm-smits.github.io/42docs/libs/minilibx
 
-Структуры в Си
-1) https://www.youtube.com/watch?v=6ooPdvzhhJw&t=1s
-2) https://www.youtube.com/watch?v=XmuZ_U_GLYY&list=PLFvD6RrgPvuEuIV3ez4i0Uw8lGH2fX7Wk&index=123
-3) https://youtu.be/LokRUTkuttY
-4) https://youtu.be/Zc506Q28ulM
- 
-Подогнать картинку по размеру
-https://ru.inettools.net/image/umenshit-i-uvelichit-foto-onlayn
-
-Выбрать бесшовный пол
-https://yandex.ru/search/?text=%D0%B1%D0%B5%D1%81%D1%88%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5+%D1%82%D0%B5%D0%BA%D1%81%D1%82%D1%83%D1%80%D1%8B&lr=43&src=suggest_B
-
-Конвертер PNG в XPM
-https://convertio.co/ru/png-xpm/
-
-Онлайн рисовалка
-https://www.pixilart.com/draw?ref=home-page
-
+MLX на русском
+https://github.com/evgenkarlson/ALL_SCHOOL_42/tree/master/00_Projects__(%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5_%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5)/03_Graphic/minilibx_(library_for_solving_projects_of_this_branch)

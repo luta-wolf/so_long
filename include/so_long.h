@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/27 21:56:19 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/28 13:44:10 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,38 +76,39 @@ typedef struct s_map
 	t_img		img;
 }				t_map;
 
-// sl_parser_check.c
+// sl_parser_check_bonus.c
 void	check_map_whole(t_map *map, char **av);
 void	check_map_line(t_map *map);
 void	check_map_arg(t_map *map);
 void	check_map_border(t_map *map, int i, int j);
 char	*get_line(char **av);
 
-// sl_parser_init.c
+// sl_parser_init_bonus.c
 t_map	*init_map(char *line);
 void	init_sprites(t_map *map);
 void	drow_image(t_map *map);
 
-// sl_parser_error.c
+// sl_parser_error_bonus.c
 void	ft_error(char *str);
 void	error_arg(char *str);
 void	check_argc(int ac, char **av);
 void	error_fd(void);
 void	free_arr_map(t_map *map);
 
-// sl_move_player.c
+// sl_move_player_bonus.c
 int		drow_map(t_map *map);
 int		keys(int key, t_map *map);
 int		end_game(void);
 void	steps(t_map *map);
+void	animation(t_map *map);
 
-// sl_move_up_down.c
+// sl_move_up_down_bonus.c
 void	move_player_up(t_map *map);
 void	move_player_down(t_map *map);
 void	move_up(t_map *map);
 void	move_down(t_map *map);
 
-// sl_move_left_right.c
+// sl_move_left_right_bonus.c
 void	move_player_left(t_map *map);
 void	move_player_right(t_map *map);
 void	move_left(t_map *map);

@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:35:30 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/27 23:25:04 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/28 13:13:39 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,38 @@ void	drow_map2(t_map *map, int i, int j)
 		map->img.exit, j * 64, i * 64);
 	else if (map->map[i][j] == 'C')
 		mlx_put_image_to_window(map->mlx, map->win, \
-		map->img.coin1, j * 64, i * 64);
+		map->img.coin, j * 64, i * 64);
 	else if (map->map[i][j] == 'X')
 		mlx_put_image_to_window(map->mlx, map->win, \
-		map->img.fire1, j * 64, i * 64);
+		map->img.fire, j * 64, i * 64);
+}
+
+void	animation(t_map *map)
+{
+	if (map->img.coin == map->img.coin1)
+		map->img.coin = map->img.coin2;
+	else if (map->img.coin == map->img.coin2)
+		map->img.coin = map->img.coin1;
+	if (map->img.fire == map->img.fire1)
+		map->img.fire = map->img.fire2;
+	else if (map->img.fire == map->img.fire2)
+		map->img.fire = map->img.fire1;
 }
 
 int	drow_map(t_map *map)
 {
-	int	i;
-	int	j;
-	char steps[100];
-	char *count_step;
+	int		i;
+	int		j;
+	char	*count_step;
+	static int		k;
 
-	ft_memcpy(steps, "Steps = ", 8);
+	k++;
+	if (k > 20)
+	{
+		animation(map);
+		k = 0;
+	}
 	count_step = ft_itoa(map->steps);
-	printf("-steps- %s\n", count_step);
-	ft_memcpy(steps + 8, count_step, ft_strlen(count_step));
-	free(count_step);
 	i = -1;
 	while (map->map[++i])
 	{
@@ -53,7 +67,8 @@ int	drow_map(t_map *map)
 		while (map->map[i][++j])
 			drow_map2(map, i, j);
 	}
-	mlx_string_put(map->mlx, map->win, 10, 10, 0xff00, steps);
+	mlx_string_put(map->mlx, map->win, 10, 10, 0xff00, "Steps:");
+	mlx_string_put(map->mlx, map->win, 75, 10, 0xff00, count_step);
 	return (0);
 }
 

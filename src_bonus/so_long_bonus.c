@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:23:01 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/27 22:59:25 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/28 15:45:29 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@ t_map	*parsing(int argc, char **argv)
 	init_sprites(map);
 	check_map_whole(map, argv);
 	check_map_line(map);
-	check_map_arg(map);
+	check_map_arg(map, -1);
 	check_map_border(map, 0, 0);
+	init_enemy(map);
 	return (map);
 }
 

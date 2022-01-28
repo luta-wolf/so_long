@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/28 13:44:10 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:29:59 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,16 @@ typedef struct s_map
 	int			width;
 	int			coin;
 	int			steps;
+	int			enemy;
 	t_vector	play_coord;
+	t_vector	enem_coord[10];
 	t_img		img;
 }				t_map;
 
 // sl_parser_check_bonus.c
 void	check_map_whole(t_map *map, char **av);
 void	check_map_line(t_map *map);
-void	check_map_arg(t_map *map);
+void	check_map_arg(t_map *map, int i);
 void	check_map_border(t_map *map, int i, int j);
 char	*get_line(char **av);
 
@@ -87,6 +89,7 @@ char	*get_line(char **av);
 t_map	*init_map(char *line);
 void	init_sprites(t_map *map);
 void	drow_image(t_map *map);
+void	init_enemy(t_map *map);
 
 // sl_parser_error_bonus.c
 void	ft_error(char *str);
@@ -99,7 +102,6 @@ void	free_arr_map(t_map *map);
 int		drow_map(t_map *map);
 int		keys(int key, t_map *map);
 int		end_game(void);
-void	steps(t_map *map);
 void	animation(t_map *map);
 
 // sl_move_up_down_bonus.c
@@ -109,10 +111,18 @@ void	move_up(t_map *map);
 void	move_down(t_map *map);
 
 // sl_move_left_right_bonus.c
+void	steps(t_map *map);
 void	move_player_left(t_map *map);
 void	move_player_right(t_map *map);
 void	move_left(t_map *map);
 void	move_right(t_map *map);
+
+// sl_move_enemy.c
+void	enemy_move(t_map *map);
+void	enemy_move_right(t_map *map);
+void	enemy_move_left(t_map *map);
+void	enemy_move_down(t_map *map);
+void	enemy_move_up(t_map *map);
 
 #endif
 

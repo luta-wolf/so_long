@@ -6,11 +6,17 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 18:05:31 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/27 22:41:23 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/28 14:23:01 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	steps(t_map *map)
+{
+	map->steps++;
+	printf("Steps: %d\n", map->steps);
+}
 
 void	move_left(t_map *map)
 {

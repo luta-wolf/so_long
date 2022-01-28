@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 21:35:30 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/28 13:13:39 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/28 17:04:15 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	drow_map2(t_map *map, int i, int j)
 
 void	animation(t_map *map)
 {
+	enemy_move(map);
 	if (map->img.coin == map->img.coin1)
 		map->img.coin = map->img.coin2;
 	else if (map->img.coin == map->img.coin2)
@@ -48,13 +49,13 @@ void	animation(t_map *map)
 
 int	drow_map(t_map *map)
 {
-	int		i;
-	int		j;
-	char	*count_step;
 	static int		k;
+	int				i;
+	int				j;
+	char			*count_step;
 
 	k++;
-	if (k > 20)
+	if (k > 30)
 	{
 		animation(map);
 		k = 0;
@@ -74,13 +75,13 @@ int	drow_map(t_map *map)
 
 int	keys(int key, t_map *map)
 {
-	if (key == UP)
+	if (key == UP || key == 126)
 		move_player_up(map);
-	else if (key == DOWN)
+	else if (key == DOWN | key == 125)
 		move_player_down(map);
-	else if (key == LEFT)
+	else if (key == LEFT | key == 123)
 		move_player_left(map);
-	else if (key == RIGHT)
+	else if (key == RIGHT | key == 124)
 		move_player_right(map);
 	else if (key == ESC)
 		end_game();
@@ -94,24 +95,4 @@ int	end_game(void)
 	exit(0);
 	return (0);
 }
-
-void	steps(t_map *map)
-{
-	map->steps++;
-	printf("Steps: %d\n", map->steps);
-}
-
-// int	animation(t_map *map)
-// {
-// 	usleep(500000);
-// 	if (map->img.coin == map->img.coin1)
-// 		map->img.coin = map->img.coin2;
-// 	else if (map->img.coin == map->img.coin2)
-// 		map->img.coin = map->img.coin1;
-// 	drow_map(map);
-// 	return 0;
-// }
-
-// mlx_put_image_to_window(map->mlx, map->win, map->img.coin2, j * 64, i * 64);
-
 	// mlx_clear_window(map->map, map->win);

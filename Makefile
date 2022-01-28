@@ -17,6 +17,7 @@ SRCS_B	=	src_bonus/so_long_bonus.c			\
 			src_bonus/sl_move_player_bonus.c	\
 			src_bonus/sl_move_left_right_bonus.c \
 			src_bonus/sl_move_up_down_bonus.c	\
+			src_bonus/sl_move_enemy.c			\
 
 OBJ		=	$(SRCS:%.c=%.o)
 

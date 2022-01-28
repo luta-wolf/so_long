@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 22:37:40 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/27 22:03:08 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/01/28 17:02:49 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_map	*init_map(char *line)
 	map->win = mlx_new_window(map->mlx, map->length * SPRITE_X, \
 							map->width * SPRITE_Y, "so_long");
 	map->coin = 0;
+	map->enemy = 0;
 	map->steps = 0;
 	free(line);
 	return (map);
@@ -59,4 +60,29 @@ void	init_sprites(t_map *map)
 	}
 	map->img.coin = map->img.coin1;
 	map->img.fire = map->img.fire1;
+}
+
+void	init_enemy(t_map *map)
+{
+	int	i;
+	int	j;
+	int	k;
+
+	k = 0;
+	i = 0;
+	while (map->map[i])
+	{
+		j = 0;
+		while (map->map[i][j])
+		{
+			if (map->map[i][j] == 'X')
+			{
+				map->enem_coord[k].x = j;
+				map->enem_coord[k].y = i;
+				k++;
+			}
+			j++;
+		}
+		i++;
+	}
 }

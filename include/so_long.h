@@ -6,7 +6,7 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 20:20:17 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/28 17:39:43 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/02/01 01:10:03 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define SO_LONG_H
 
 # include "../libft/libft.h"
-# include <mlx.h>
+# include "../minilibx/mlx.h"
+// # include <mlx.h>
 # include <stdlib.h>
 # include <stdio.h> // strerror()
 # include <unistd.h>
@@ -84,15 +85,16 @@ typedef struct s_map
 // sl_parser_check_bonus.c
 void	check_map_whole(t_map *map, char **av);
 void	check_map_line(t_map *map);
-void	check_map_arg(t_map *map);
-void	check_map_arg2(t_map *map, int i);
+void	check_map_arg(t_map *map, int i, int j);
+void	init_player(t_map *map, int i, int j, int *player);
+void	check_map_arg2(t_map *map, int i, int j);
 void	check_map_border(t_map *map, int i, int j);
-char	*get_line(char **av);
 
 // sl_parser_init_bonus.c
+char	*get_line(char **av);
 t_map	*init_map(char *line);
 void	init_sprites(t_map *map);
-void	drow_image(t_map *map);
+// void	drow_image(t_map *map);
 void	init_enemy(t_map *map);
 
 // sl_parser_error_bonus.c

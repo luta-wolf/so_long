@@ -6,36 +6,11 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 08:32:19 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/27 21:10:30 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/02/01 01:13:07 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-char	*get_line(char **av)
-{
-	int		fd;
-	char	*new_line;
-	char	*line;
-	char	*tmp;
-
-	fd = open(av[1], O_RDONLY);
-	if (fd == -1)
-		error_fd();
-	new_line = ft_strdup("");
-	while (1)
-	{
-		line = get_next_line(fd);
-		if (!line)
-			break ;
-		tmp = new_line;
-		new_line = ft_gnl_strjoin(new_line, line);
-		free(tmp);
-		free(line);
-	}
-	close(fd);
-	return (new_line);
-}
 
 void	check_map_whole(t_map *map, char **av)
 {
@@ -82,32 +57,37 @@ void	check_map_line(t_map *map)
 	}
 }
 
-void	check_map_arg(t_map *map)
+void	init_player(t_map *map, int i, int j, int *player)
 {
-	int	i;
-	int	j;
+	map->play_coord.x = j;
+	map->play_coord.y = i;
+	*player += 1;
+}
+
+void	check_map_arg(t_map *map, int i, int j)
+{
 	int	player;
+	int	exit;
 
 	player = 0;
-	i = -1;
+	exit = 0;
 	while (map->map[++i])
 	{
-		j = 0;
-		while (map->map[i][j])
+		j = -1;
+		while (map->map[i][++j])
 		{
 			if (map->map[i][j] == 'P')
-			{
-				map->play_coord.x = j;
-				map->play_coord.y = i;
-				player++;
-			}
+				init_player(map, i, j, &player);
 			else if (map->map[i][j] == 'C')
 				map->coin++;
-			j++;
 		}
 	}
 	if (player != 1)
 		ft_error("На карте должен быть один игрок.");
+	if (map->coin < 0)
+		ft_error("На карте должены быть книги.");
+	if (exit < 0)
+		ft_error("На карте должен быть выход.");
 }
 
 void	check_map_border(t_map *map, int i, int j)

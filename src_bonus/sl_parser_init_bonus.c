@@ -6,11 +6,36 @@
 /*   By: einterdi <einterdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 22:37:40 by einterdi          #+#    #+#             */
-/*   Updated: 2022/01/28 17:36:14 by einterdi         ###   ########.fr       */
+/*   Updated: 2022/02/01 00:24:16 by einterdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+char	*get_line(char **av)
+{
+	int		fd;
+	char	*new_line;
+	char	*line;
+	char	*tmp;
+
+	fd = open(av[1], O_RDONLY);
+	if (fd == -1)
+		error_fd();
+	new_line = ft_strdup("");
+	while (1)
+	{
+		line = get_next_line(fd);
+		if (!line)
+			break ;
+		tmp = new_line;
+		new_line = ft_gnl_strjoin(new_line, line);
+		free(tmp);
+		free(line);
+	}
+	close(fd);
+	return (new_line);
+}
 
 t_map	*init_map(char *line)
 {

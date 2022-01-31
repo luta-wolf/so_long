@@ -23,7 +23,7 @@ OBJ		=	$(SRCS:%.c=%.o)
 
 OBJ_B		=	$(SRCS_B:%.c=%.o)
 
-LIB		=	libft/libft.a
+LIB		=	libft/libft.a minilibx/libmlx.a
 
 INCLUDE	=	include/
 
@@ -48,10 +48,12 @@ END		=	\033[0m
 #---------------------------------------------------------------------------------
 .PHONY:		all	clean	fclean	re	bonus	libft
 
-all:		libft $(NAME)
+all:		libft mlx $(NAME)
 
 libft:
 			@$(MAKE) -C libft/
+mlx:
+			@$(MAKE) -C minilibx/
 
 $(NAME):	$(OBJ)
 			$(CC) $(FLAGS) $(OBJ) $(LIB) $(MLX) -o $(NAME)
@@ -60,13 +62,14 @@ $(NAME):	$(OBJ)
 %.o :		%.c $(INCLUDE)$(HEADER)
 			$(CC) $(FLAGS)  -c $< -o $@ -I $(INCLUDE)
 
-bonus:		libft $(OBJ_B)
+bonus:		mlx libft $(OBJ_B)
 			$(CC) $(FLAGS) $(OBJ_B) $(LIB) $(MLX) -o $(NAME)
 			@echo "$(TURQUOISE)\n< Complited $(NAME) >\n$(END)"
 
 clean:
 			@$(RM) $(OBJ) $(OBJ_B)
 			@$(MAKE) -C libft/ clean
+			@$(MAKE) -C minilibx/ clean
 			@echo "$(YELLOW)\n< Cleaning succeed >\n$(END)"
 
 fclean:		clean
